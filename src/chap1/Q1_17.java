@@ -21,10 +21,10 @@ public class Q1_17 {
 		for (int i = 1; i <= n; i++) {// i = 段数
 			y = (z - x) / 2;// マス目の数から*の数を引いて２等分し左右一方あたりのスペースの数を算出
 			for (int j = 0; j < y; j++) {
-				System.out.print(" ");
+				System.out.print(String.format("%1$3s", " "));
 			}
 			for (int j = 0; j < x; j++) {// xの数分*を描画
-				System.out.print(i);
+				System.out.print(String.format("%1$3d", i));
 			}
 			x += 2;// 一段上がるごとに２ずつ*の数が増える。
 			System.out.println();
