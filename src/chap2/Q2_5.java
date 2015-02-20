@@ -2,11 +2,14 @@ package chap2;
 
 import java.util.Scanner;
 
-public class Q2_4 {
+public class Q2_5 {
 	
 	static void copy (int[] a, int[] b) {
+		int j = a.length-1;
+		System.out.println(j);
 		for (int i = 0; i < a.length; i++) {
-			a[i] = b[i];
+			a[i] = b[j];
+			j--;
 		}
 	}
 	
