@@ -24,14 +24,35 @@ public class Q3_4 {
 		System.out.print("   |");
 		// マークを表示するfor文
 		for (int j = 0; j < a.length; j++) {
-			if (j == pl) {
-				System.out.print(" <- ");
-			} else if (j == pr) {
-				System.out.print("  ->");
-			} else if (j == pc) {
-				System.out.print("   +");
-			} else {
-				System.out.print("    ");
+			if (pl == pr && j == pc) {
+				System.out.printf("%4s", " <-+->");
+				break;
+			}
+			if (j == pl) {// jの場所が先頭値と一致したとき
+				if (pl == pc) {
+
+				} else {
+					System.out.printf("%4s", "<-");
+				}
+			}
+			if (j == pc) {// jの場所が中央値と一致したとき
+				if (pl == pc) {// 先頭値と中央値が一緒の場合
+					System.out.printf("%4s", "<-+");
+				} else if (pc == pr) {
+					System.out.printf("%4s", "+->");// 末尾値と中央値が一緒の場合
+				} else {
+					System.out.printf("%4s", "+");// jの場所が中央値と一致したとき
+				}
+			}
+			if (j == pr) {// jの場所が末尾値と一致したとき
+				if (pc == pr) {// 末尾値と中央値が一緒の場合
+
+				} else {
+					System.out.printf("%4s", "->");// jの場所が末尾値と一致したとき
+				}
+			}
+			if (j != pl && j != pc && j != pr) {
+				System.out.printf("%4s", "");
 			}
 		}
 		System.out.println();
@@ -49,79 +70,6 @@ public class Q3_4 {
 		} else {// 中央値よりkeyが小さかったら
 			pr = pc - 1;// 探索範囲を前半に絞り込む
 		}
-
-		for (int i = 0; i < a.length; i++) {
-			pc = (pl + pr) / 2;// 中央要素のインデックス
-			System.out.print("   |");
-			// マークを表示するfor文
-			for (int j = 0; j < a.length; j++) {
-				if (pl == pr && j == pc) {
-					System.out.printf("%4s", " <-+->");
-					break;
-				}
-				if (j == pl) {// jの場所が先頭値と一致したとき
-					if (pl == pc) {
-
-					} else {
-						System.out.printf("%4s", "<-");
-					}
-				}
-				if (j == pc) {// jの場所が中央値と一致したとき
-					if (pl == pc) {// 先頭値と中央値が一緒の場合
-						System.out.printf("%4s", "<-+");
-					} else if (pc == pr) {
-						System.out.printf("%4s", "+->");// 末尾値と中央値が一緒の場合
-					} else {
-						System.out.printf("%4s", "+");// jの場所が中央値と一致したとき
-					}
-				}
-				if (j == pr) {// jの場所が末尾値と一致したとき
-					if (pc == pr) {// 末尾値と中央値が一緒の場合
-
-					} else {
-						System.out.printf("%4s", "->");// jの場所が末尾値と一致したとき
-					}
-				}
-				if (j != pl && j != pc && j != pr) {
-					System.out.printf("%4s", "");
-				if (j == pl) {
-					System.out.print(" <- ");
-				} else if (j == pr) {
-					System.out.print("  ->");
-				} else if (j == pc) {
-					System.out.print("   +");
-				} else {
-					System.out.print("    ");
-				}
-			}
-			System.out.println();
-			System.out.printf("%3d", pc);
-			System.out.print("|");
-			// 要素を表示するfor文
-			for (int j = 0; j < a.length; j++) {
-				System.out.printf("%4d", a[j]);
-			}
-			System.out.println();
-			if (a[pc] == key) {
-				return pc;// 探索成功
-			} else if (a[pc] < key) {// 中央値よりkwyが大きかったら
-				pl = pc + 1;// 探索範囲を後半に絞り込む
-			} else {// 中央値よりkeyが小さかったら
-				pr = pc - 1;// 探索範囲を前半に絞り込む
-			}
-		}
-
-		// do {
-		// int pc = (pl + pr) / 2;// 中央要素のインデックス
-		// if (a[pc] == key) {
-		// return pc;// 探索成功
-		// } else if (a[pc] < key) {// 中央値よりkwyが大きかったら
-		// pl = pc + 1;// 探索範囲を後半に絞り込む
-		// } else {// 中央値よりkeyが小さかったら
-		// pr = pc - 1;// 探索範囲を前半に絞り込む
-		// }
-		//
-		// } while (pl <= pr);
 
 		return -1;// 探索失敗
 	}
@@ -157,5 +105,4 @@ public class Q3_4 {
 		}
 	}
 
-}
 }
