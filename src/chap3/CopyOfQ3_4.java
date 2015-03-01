@@ -2,7 +2,7 @@ package chap3;
 
 import java.util.Scanner;
 
-public class Q3_4 {
+public class CopyOfQ3_4 {
 
 	// 配列aの先頭n個の要素からkeyと一致する要素を２分探索
 	static int binSearch(int[] a, int n, int key) {
