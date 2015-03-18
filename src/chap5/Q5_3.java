@@ -21,17 +21,17 @@ public class Q5_3 {
 
 		ArrayList<Integer> cd = new ArrayList<Integer>();// 公約数を保存
 		
-		for (int i = 1; i < getMin(number); i++) {// 配列の最小値の数分最大公約数を走査
+		for (int i = 1; i <= getMin(number); i++) {// 配列の最小値の数分最大公約数を走査
 			int flg = 1;// 1 = OK, 0 = NG
 			for (int j = 0; j < number.length; j++) {
 				if (getSurplus(number[j], i) != 0) {// 剰余が０以外なら
 					flg = 0;// flgをNGにする
+					break;// それ以降は操作しても意味がないのでbreak
 				}
-				// 全部走査し終わってもflgがOKのままならその数は公約数
-				if (flg == 1) {
-					cd.add(i);// その数を公約数を保存する配列cdに追加
-				}
-
+			}
+			// 全部走査し終わってもflgがOKのままならその数は公約数
+			if (flg == 1) {
+				cd.add(i);// その数を公約数を保存する配列cdに追加
 			}
 		}
 		
