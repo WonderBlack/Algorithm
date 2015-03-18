@@ -53,15 +53,15 @@ public class LinkedListTester {
 	}
 	
 	//メニュー列挙型
-	enum Menu {
-		ADD_FIRST(	"先頭にノードを挿入"),
-		ADD_LAST(	"末尾にノードを挿入"),
-		RMV_FIRST(	"先頭ノードを削除"),
-		RMV_LAST(	"末尾ノードを削除"),
-		RMV_CRNT(	"着目ノードを削除"),
-		CLEAR(	"全ノードを削除"),
-		SEARCH_NO(	"番号で探索"),
-		SEARCH_NAME(	"氏名で探索"),
-	}
+//	enum Menu {
+//		ADD_FIRST(	"先頭にノードを挿入"),
+//		ADD_LAST(	"末尾にノードを挿入"),
+//		RMV_FIRST(	"先頭ノードを削除"),
+//		RMV_LAST(	"末尾ノードを削除"),
+//		RMV_CRNT(	"着目ノードを削除"),
+//		CLEAR(	"全ノードを削除"),
+//		SEARCH_NO(	"番号で探索"),
+//		SEARCH_NAME(	"氏名で探索"),
+//	}
 
 }
