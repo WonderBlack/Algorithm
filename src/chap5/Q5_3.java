@@ -7,14 +7,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Q5_3 {
+	
 	public static void main(String[] args) {
 
 		Scanner stdIn = new Scanner(System.in);
 
 		System.out.println("配列cdの要素数は：");
 		int n = stdIn.nextInt();
+		
 		int[] x = new int[n];
-
 		for (int i = 0; i < n; i++) {
 			System.out.print("要素[" + i + "]");
 			x[i] = stdIn.nextInt();
@@ -50,41 +51,45 @@ public class Q5_3 {
 		}
 
 		return cd;
+		
 	}
 
 	// 剰余を求めるメソッド
 	static int getSurplus(int x, int y) {
+		
 		int z = x % y;
 		return z;
+		
 	}
 
 	// 配列の中の最小値を求めるメソッド
 	static int getMin(int[] x) {
+		
 		int min = x[0];
+		
 		for (int i = 1; i < x.length; i++) {
 			if (x[i] < min) {
 				min = x[i];
 			}
 		}
+		
 		return min;
-
+		
 	}
 
 	// 約数を求めるメソッド
 	static ArrayList<Integer> getDivisor(int x) {
+		
 		ArrayList<Integer> num = new ArrayList<Integer>();
-
+		
 		for (int i = 1; i < x; i++) {
 			if ((x % i) == 0) {
 				num.add(i);
 			}
 		}
+		
 		return num;
-
+		
 	}
-
-	// static int gcdArray(int[] a) {
-	//
-	// }
 
 }
