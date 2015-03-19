@@ -55,7 +55,7 @@ public class Q5_3 {
 				System.out.println("配列x[" + i + "] " + x[i] + " に対して" + min + "は約数です");
 				i++;
 				return gcdArray2(x, i, min);
-			} else {// 駄目ならminをディクリメントして再度同じ配列の値に対してチェック
+			} else {// 駄目ならminをディクリメントして再度配列の最初の値からチェック
 				System.out.println("配列x[" + i + "] " + x[i] + " に対して" + min + "は約数ではありません");
 				min--;
 				i = 0;
