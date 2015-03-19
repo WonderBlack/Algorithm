@@ -1,5 +1,7 @@
 package chap5;
 
+// 複数の値の公約数を求める
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,22 +13,34 @@ public class Q5_3 {
 
 		System.out.println("配列cdの要素数は：");
 		int n = stdIn.nextInt();
-		int[] number = new int[n];
+		int[] x = new int[n];
 
 		for (int i = 0; i < n; i++) {
 			System.out.print("要素[" + i + "]");
-			number[i] = stdIn.nextInt();
+			x[i] = stdIn.nextInt();
 		}
-		System.out.println(Arrays.toString(number));
+		System.out.println(Arrays.toString(x));
+
+		ArrayList<Integer> cd = gcdArray(x);
+
+		System.out.println("配列cdの公約数は以下の通り");
+		for (int i = 0; i < cd.size(); i++) {
+			System.out.println(cd.get(i));
+		}
+
+	}
+
+	// 配列中の数の公約数を求めるメソッド
+	public static ArrayList<Integer> gcdArray(int[] x) {
 
 		ArrayList<Integer> cd = new ArrayList<Integer>();// 公約数を保存
-		
-		for (int i = 1; i <= getMin(number); i++) {// 配列の最小値の数分最大公約数を走査
+
+		for (int i = 1; i <= getMin(x); i++) {// １〜配列中の最小値の間で最大公約数を走査
 			int flg = 1;// 1 = OK, 0 = NG
-			for (int j = 0; j < number.length; j++) {
-				if (getSurplus(number[j], i) != 0) {// 剰余が０以外なら
+			for (int j = 0; j < x.length; j++) {
+				if (getSurplus(x[j], i) != 0) {// 剰余が０以外なら
 					flg = 0;// flgをNGにする
-					break;// それ以降は操作しても意味がないのでbreak
+					break;// それ以降は走査しても意味がないのでbreak
 				}
 			}
 			// 全部走査し終わってもflgがOKのままならその数は公約数
@@ -34,12 +48,8 @@ public class Q5_3 {
 				cd.add(i);// その数を公約数を保存する配列cdに追加
 			}
 		}
-		
-		System.out.println("配列cdの公約数は以下の通り");
-		for (int i = 0; i < cd.size(); i++) {
-			System.out.println(cd.get(i));
-		}
-		
+
+		return cd;
 	}
 
 	// 剰余を求めるメソッド
