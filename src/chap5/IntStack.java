@@ -101,12 +101,4 @@ public class IntStack {
 		}
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }
