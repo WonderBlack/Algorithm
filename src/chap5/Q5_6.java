@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //ハノイの塔
 
-public class Hanoi {
+public class Q5_6 {
 	static int cnt = 1;
 
 
@@ -19,7 +19,27 @@ public class Hanoi {
 		// 一番下の円盤を目的軸に移動
 		System.out.println("ステップ" + cnt);
 		cnt++;
-		System.out.println("円盤[" + no + "]を" + x + "軸から" + y + "軸へ移動");
+		
+		String a;
+		String b;
+		
+		if (x == 1) {
+			a = "A";
+		} else if (x == 2) {
+			a = "B";
+		} else {
+			a = "C";
+		}
+		
+		if (y == 1) {
+			b = "A";
+		} else if (y == 2) {
+			b = "B";
+		} else {
+			b = "C";
+		}
+		
+		System.out.println("円盤[" + no + "]を" + a + "軸から" + b + "軸へ移動");
 
 		// 底の円盤を除いたグループを中間軸から目的軸に移動
 		if (no > 1) {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //ハノイの塔
 
-public class Hanoi {
+public class Q5_7 {
 	static int cnt = 1;
 
 
