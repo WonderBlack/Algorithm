@@ -55,7 +55,7 @@ public class Gstack<E> {
 	// スタックからxを探してインデックス（みつからなければ-1）を返す
 	public int indexOf(E x) {
 		for (int i = ptr - 1; i >= 0; i--) {// 頂上側から線形探索
-			if (stk[i] == x) {
+			if (stk[i].equals(x)) {
 				return i;// 探索成功
 			}
 		}
